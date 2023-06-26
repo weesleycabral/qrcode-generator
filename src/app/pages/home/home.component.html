@@ -7,10 +7,10 @@
 </div>
 
 <div class="qrcode-area">
-  <qr-code #parent [value]="valor" size="300" errorCorrectionLevel="M"></qr-code>
+  <qr-code #downloadLink [value]="valor" size="300" errorCorrectionLevel="M"></qr-code>
 </div>
 
 <div class="button-area">
-  <button *ngIf="valor" (click)="downloadQRCode(parent)">Baixar QR Code</button>
+  <button *ngIf="valor" (click)="downloadQRCode()">Baixar QR Code</button>
 
 </div>
