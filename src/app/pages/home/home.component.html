@@ -1,0 +1,16 @@
+<div class="title">
+  <h1>QR Code Generator</h1>
+</div>
+
+<div class="field">
+  <input class="text-field" type="text" name="url" [(ngModel)]="valor" placeholder="Digite aqui seu texto ou URL...">
+</div>
+
+<div class="qrcode-area">
+  <qr-code #parent [value]="valor" size="300" errorCorrectionLevel="M"></qr-code>
+</div>
+
+<div class="button-area">
+  <button *ngIf="valor" (click)="downloadQRCode(parent)">Baixar QR Code</button>
+
+</div>
