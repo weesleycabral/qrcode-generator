@@ -6,7 +6,7 @@
   <input class="text-field" type="text" name="url" [(ngModel)]="valor" placeholder="Digite aqui seu texto ou URL...">
 </div>
 
-<div class="qrcode-area">
+<div class="qrcode-area" *ngIf="valor">
   <qr-code #downloadLink [value]="valor" size="300" errorCorrectionLevel="M"></qr-code>
 </div>
 
