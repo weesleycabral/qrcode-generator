@@ -1,7 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import * as saveAs from 'file-saver';
-import html2canvas from 'html2canvas';
-// import * as html2canvas from 'html2canvas';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,5 +11,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  downloadQRCode() {}
+  downloadQRCode() {
+    const link = document.createElement('a');
+    link.href = this.valor;
+    link.download = 'qrcode.png';
+    link.click();
+  }
 }
