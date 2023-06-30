@@ -3,13 +3,13 @@
 </div>
 
 <div class="field">
-  <input class="text-field" type="text" name="url" [(ngModel)]="valor" placeholder="Digite aqui seu texto ou URL...">
+  <input class="text-field" type="text" name="url" [(ngModel)]="myAngularxQrCode" placeholder="Digite aqui seu texto ou URL...">
 </div>
 
-<div class="qrcode-area" *ngIf="valor">
-  <qr-code #downloadLink [value]="valor" size="300" errorCorrectionLevel="M"></qr-code>
+<div class="qrcode-area" *ngIf="myAngularxQrCode">
+  <qrcode (qrCodeURL)="onChangeURL($event)" [qrdata]="myAngularxQrCode" [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
 </div>
 
 <div class="button-area">
-  <button *ngIf="valor" (click)="downloadQRCode()">Baixar QR Code</button>
+  <button *ngIf="myAngularxQrCode"><a [href]="qrCodeDownloadLink" download="qrcode">Download</a></button>
 </div>
